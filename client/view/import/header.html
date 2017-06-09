@@ -1,0 +1,56 @@
+<template name="header">
+<div class="header">
+<head>
+    <title>my space</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0,">
+    <script type='text/javascript' src='https://code.jquery.com/jquery-1.9.1.min.js'></script>
+    <script type='text/javascript'>
+            $(function(){
+                var w = $(".content").width() ;
+                var b = 0;
+                
+                $('.content').css('height', ($(window).height() - 20) + 'px' ); //將區塊自動撐滿畫面高度
+                
+                
+                $(".button").click(function(){ //按下button時
+                    if ($(".scroll").css('left') == '-'+w+'px')
+                    {   
+                        $(".scroll").animate({ left:'-100px' }, 600 ,'swing');
+                    }
+                });
+                
+                
+                $(".content").click(function(){　//按下content後
+                     
+                    $(".scroll").animate( { left:'-'+w+'px' }, 600 ,'swing');	
+                     
+                });
+                     
+                // $(".content").click(function(){　//按下content後
+                //     $(".scroll").animate( { left:'-'+w+'px' }, 600 ,'swing');	
+                // });	
+            });
+    </script> 
+</head>
+
+
+  <div class="bigmenu">
+      header
+      <div id="includedContent"></div>
+  </div>
+
+
+  <div class="smallmenu">
+    <div class="scroll">
+        <div class="button">
+            <span style="line-height:50px">meau</span>	
+        </div>
+        <div class="content">
+            header
+        </div>
+    </div>
+  </div>
+
+  
+</div>
+</template>

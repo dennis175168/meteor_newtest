@@ -1,0 +1,24 @@
+<template name="login">
+<div align="center">
+
+<form class="new">
+  <input type="text" name="text" placeholder="Type to add new text" />
+  <input type="submit">
+</form>
+
+
+<!--{{data}}-->
+<table align="center">
+  <td>id</td>
+  <td>text</td>
+  {{#each data}}
+  <tr>
+    <td>{{_id}}</td>
+    <td>{{text}}</td>
+    <td><button class="delete">delete</button></td>
+  </tr>
+   {{/each}}
+</table>
+
+</div>
+</template>
