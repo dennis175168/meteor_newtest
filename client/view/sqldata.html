@@ -4,27 +4,22 @@
      <input type="text"  name="t1" class="t1">
      <input type="submit">
      <input type="button" id="search" value="search" class="search">
-     <div id="l0" >div1
-        {{itemName 2}}  
-        <!--<table>
-            <tr>
-                <td>id</td>
-                <td>name</td>
-                <td>title</td>
-                <td>type</td>
-                <td>img</td>
-            </tr>
-            {{#each data1}}
+     <div id="l0" >
+         <table>
+        {{#each repo}}
             <tr>
                 <td>{{id}}</td>
-                <td>{{contact_person}}</td>
                 <td>{{title}}</td>
-                <td>{{type}}</td>
+                <td>{{contact_person}}</td>
+                <td>{{contact_number}}</td>
+                <td>{{loacation}}</td>
+                <td>{{content}}</td>
                 <td>{{img}}</td>
-                <td><input type="button" class="delete" value="delete"></td>
+                <td>{{type}}</td>
+                <td><button class="delete">delete</button></td>
             </tr>
-            {{/each}}
-        </table>-->
+        {{/each}}
+         </table>
       </div>
     </form>
 </div>
