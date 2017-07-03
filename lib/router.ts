@@ -1,3 +1,6 @@
+import { FlowRouter } from 'meteor/FlowRouter';
+import { BlazeLayout } from 'meteor/BlazeLayout';
+
 FlowRouter.route('/', {
     name:'home',
     action: function(params, queryParams) {

@@ -9,7 +9,8 @@ Meteor.startup(() => {
   
   const sql = "select * from reports";
     HTTP.post("http://127.0.0.1/ajax/server.php", { params: {sql} }, function(err , data){
-          //console.log(data);
+          Reports.remove({});
+          console.log(data);
           const info = JSON.parse(data.content);
           console.log(info.length);
           //console.log(info[0].id);
@@ -22,16 +23,16 @@ Meteor.startup(() => {
             const content = info[i].content;
             const img = info[i].img;
             const type = info[i].type; 
-            // Reports.insert({
-            //   id : id,
-            //   title :title,
-            //   contact_person :contact_person,
-            //   contact_number :contact_number,
-            //   location :location,
-            //   content :content,
-            //   img :img,
-            //   type :type,
-            // });
+            Reports.insert({
+              id : id,
+              title :title,
+              contact_person :contact_person,
+              contact_number :contact_number,
+              location :location,
+              content :content,
+              img :img,
+              type :type,
+            });
           }
         });
 });

@@ -6,7 +6,9 @@ import { Meteor } from 'meteor/meteor';
 import { Reports } from '../../lib/collections.ts';
 
 Template.sqldata.onCreated(function(){
+  Meteor.call('load');
   this.subscribe('reports');
+  
 });
 
 
@@ -14,15 +16,18 @@ Template.sqldata.onCreated(function(){
 
 Template.sqldata.events({
     
-    'submit .insert'(event){
-          event.preventDefault();
-          //const target = event.target;
-          const text = event.target.t1.value;//sql存入text
-          const label = document.getElementById("l2").id;//要印的label的id存入label
-          const col = "type";
-          //console.log(label);
-          SQL(text,label);
-    },
+     'submit .insert'(event){
+           event.preventDefault();
+           //const target = event.target;
+           const text = event.target.t1.value;//sql存入text
+    //       Meteor.call('insert',text);
+     },
+
+    'click .delete'(event){
+      const _id = this._id;
+      const id = Reports.findOne(this._id).id;
+      Meteor.call('delete' , _id , id);
+     },
     
 });
 
